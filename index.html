@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087f46">
+  <title>KUNMUN Medical Hall | Trusted Healthcare Partner</title>
+  <meta name="description" content="KUNMUN Medical Hall — genuine medicines, healthcare products and doctor consultation near Simula Hospital, Markona, Balasore.">
+  <link rel="icon" href="assets/kunmun-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">💚 Trusted healthcare partner • Great discount offers • Open daily</div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <img src="assets/kunmun-logo.png" alt="KUNMUN Medical Hall logo">
+        <span>KUNMUN <small>MEDICAL HALL</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#medicines">Medicines</a>
+        <a href="#consultation">Consultation</a>
+        <a href="#contact">Contact</a>
+        <button class="cart-btn" id="cartBtn">🛒 Cart <b id="cartCount">0</b></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill">YOUR HEALTH, OUR PRIORITY</span>
+          <h1>Healthcare you can <span>trust.</span></h1>
+          <p>Genuine medicines, healthcare products and convenient doctor consultation support — all from KUNMUN Medical Hall.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#medicines">🛒 Shop Medicines</a>
+            <a class="btn whatsapp" href="https://wa.me/918249357903?text=Hello%20KUNMUN%20Medical%20Hall,%20I%20want%20to%20order%20medicine." target="_blank">💬 WhatsApp Order</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>✓ Genuine</strong><small>Medicines</small></div>
+            <div><strong>✓ Helpful</strong><small>Service</small></div>
+            <div><strong>✓ Local</strong><small>Support</small></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="assets/kunmun-logo.png" alt="KUNMUN Medical Hall">
+          <div class="offer"><b>Special Offers</b><span>Ask us for today's available discounts.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick">
+      <div class="container quick-grid">
+        <a href="#medicines"><b>💊</b><span><strong>Medicines</strong>Browse products</span></a>
+        <a href="#prescription"><b>📄</b><span><strong>Prescription</strong>Send your prescription</span></a>
+        <a href="#consultation"><b>🩺</b><span><strong>Consultation</strong>Request an appointment</span></a>
+        <a href="#contact"><b>📍</b><span><strong>Visit Store</strong>Get directions</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head"><span>WHAT WE OFFER</span><h2>Everything you need, in one place</h2><p>Simple, friendly and convenient healthcare support.</p></div>
+        <div class="cards three">
+          <article class="service-card"><div class="icon">💊</div><h3>Genuine Medicines</h3><p>Branded and generic medicines available. Ask our team about availability and offers.</p></article>
+          <article class="service-card"><div class="icon">🩺</div><h3>Doctor Consultation</h3><p>Request a consultation appointment through the website or WhatsApp.</p></article>
+          <article class="service-card"><div class="icon">🛍️</div><h3>Healthcare Products</h3><p>Everyday wellness and healthcare products for your family.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="medicines">
+      <div class="container">
+        <div class="section-head row-head"><div><span>MEDICINE STORE</span><h2>Popular categories</h2></div><div class="search"><input id="search" type="search" placeholder="Search medicines or categories..."> 🔎</div></div>
+        <div class="chips">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="pain">Pain & Fever</button>
+          <button class="chip" data-filter="cold">Cold & Cough</button>
+          <button class="chip" data-filter="vitamin">Vitamins</button>
+          <button class="chip" data-filter="care">Personal Care</button>
+        </div>
+        <div class="products" id="products"></div>
+        <p class="note">Product examples are for demonstration. Medicine availability, pricing and suitability should be confirmed with KUNMUN Medical Hall/pharmacist.</p>
+      </div>
+    </section>
+
+    <section class="section prescription" id="prescription">
+      <div class="container prescription-box">
+        <div><span>PRESCRIPTION SERVICE</span><h2>Have a prescription?</h2><p>Upload it here and send your request to KUNMUN Medical Hall. Your request is saved and our team will also confirm via WhatsApp.</p></div>
+        <form id="prescriptionForm" name="prescription" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="prescription">
+          <p class="hp-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <input id="rxName" name="name" required placeholder="Your name">
+          <input id="rxPhone" name="phone" required placeholder="Phone number" inputmode="tel">
+          <input id="rxFile" name="prescription-file" type="file" accept="image/*,.pdf" required>
+          <button class="btn primary" type="submit">Send Prescription Request</button>
+          <small id="rxStatus"></small>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="consultation">
+      <div class="container consult-grid">
+        <div><span>DOCTOR CONSULTATION</span><h2>Request an appointment</h2><p>Choose your preferred date and time. Our team can confirm the appointment through WhatsApp.</p></div>
+        <form id="consultForm" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="consult-form">
+          <input type="hidden" name="form-name" value="consultation">
+          <p class="hp-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <input id="cName" name="name" required placeholder="Full name">
+          <input id="cPhone" name="phone" required placeholder="Phone number">
+          <input id="cDate" name="date" required type="date">
+          <select id="cTime" name="time" required><option value="">Preferred time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+          <textarea id="cMessage" name="message" placeholder="Reason / message (optional)"></textarea>
+          <button class="btn primary" type="submit">Request Appointment</button>
+          <small id="cStatus"></small>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div><span>CONTACT</span><h2>Visit KUNMUN Medical Hall</h2><p>Near Simula Hospital, Markona, Balasore 756126, Odisha.</p><div class="contact-actions"><a class="btn primary" href="tel:8249357903">📞 Call 8249357903</a><a class="btn whatsapp" href="https://wa.me/918249357903" target="_blank">💬 WhatsApp</a></div></div>
+        <div class="map-card"><div class="map-icon">📍</div><h3>Markona, Balasore</h3><p>Near Simula Hospital</p><a href="https://www.google.com/maps/search/?api=1&query=Simula+Hospital+Markona+Balasore" target="_blank">Open in Google Maps →</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer"><div><b>KUNMUN MEDICAL HALL</b><p>Your Health, Our Priority.</p></div><div>© 2026 KUNMUN Medical Hall</div></div></footer>
+
+  <div class="cart-drawer" id="cartDrawer"><div class="cart-panel"><div class="cart-head"><h2>Your Cart</h2><button id="closeCart">✕</button></div><div id="cartItems"></div><div class="cart-foot"><strong id="cartTotal">₹0</strong><button class="btn whatsapp" id="orderCart">Order on WhatsApp</button></div></div></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
